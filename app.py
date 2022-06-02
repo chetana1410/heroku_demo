@@ -159,7 +159,7 @@ def tasks():
             if(switch==1):
                 switch=0
                 camera.release()
-                cv2.destroyAllWindows()
+                #cv2.destroyAllWindows()
                 
             else:
                 camera = cv2.VideoCapture(0)
@@ -183,4 +183,4 @@ if __name__ == '__main__':
     app.run(debug=True)
     
 camera.release()
-cv2.destroyAllWindows()     
+#cv2.destroyAllWindows()     
