@@ -69,7 +69,7 @@ switch=1
 app = Flask(__name__, template_folder='./templates')
 
 
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(1)
 
 
 def gen_frames():  # generate frame by frame from camera
