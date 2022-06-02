@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="container mt-3">
+            <div class="">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex">
+                        <form
+                            method="post"
+                            action="{{ url_for('tasks') }}"
+                            class="m-0"
+                        >
+                            <input
+                                type="submit"
+                                value="Stop/Start"
+                                name="stop"
+                                class="btn btn-primary"
+                            />
+                            <input
+                                type="submit"
+                                value="Capture"
+                                name="click"
+                                class="btn btn-primary"
+                            />
+                            <input
+                                type="submit"
+                                value="Grey"
+                                name="grey"
+                                class="btn btn-primary"
+                            />
+                            <input
+                                type="submit"
+                                value="Negative"
+                                name="neg"
+                                class="btn btn-primary"
+                            />
+                            <input
+                                type="submit"
+                                value="Outputs"
+                                name="out"
+                                class="btn btn-primary"
+                            />
+                        </form>
+                        <button
+                            class="btn btn-secondary mx-1"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#instructions"
+                            aria-expanded="false"
+                            aria-controls="instructions"
+                        >
+                            Instructions
+                        </button>
+                    </div>
+                    <div class="collapse mt-3" id="instructions">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Instructions:</h3>
+                                <ol>
+                                    <li>
+                                        Stop/Start--Toggle between stop or start
+                                        live streaming
+                                    </li>
+                                    <li>
+                                        Capture--Take still-shot and save in the
+                                        'shots' directory
+                                    </li>
+                                    <li>
+                                        Grey--Toggle between grayscale and RGB
+                                        output
+                                    </li>
+                                    <li>
+                                        Negative--Toggle between negative and
+                                        RGB output
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <img
+                        src="{{ url_for('video_feed') }}"
+                        style="width: 80%; height: auto"
+                        class="my-3"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- <script src="tailwind.js"></script> -->
+        <script src="bootstrap.min.js"></script>
+    </body>
+</html>

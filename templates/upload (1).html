@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Python Flask Upload and display image</title>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />         -->
+<link rel="stylesheet" href="{{url_for('static', filename='utils/bootstrap.min.css')}}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container p-lg-5 p-md-4 p-sm-0">
+    <h1 class="mb-4">Python Flask Upload and display image</h1>
+<div>
+    <!-- <h2>Select a file to upload</h2> -->
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <div class="card">
+            <div class="card-body">
+                <ul>
+                    {% for message in messages %}
+                      <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>   
+            </div>
+          </div>
+          {% endif %}
+        {% endwith %}
+    </p>
+    <!-- {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}" style="width:15%">
+        </div>
+    {% endif %} -->
+    <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+        <dl>
+            <div class="input-group">
+                <label class="input-group-text bold"><b>Select a file to Upload</b></label>
+                <input type="file" name="file" class="form-control" style="width:auto" placeholder="Select a file" autocomplete="off" multiple>
+            </div>
+        </dl>
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary" name="sub">
+            <input
+            type="submit"
+            value="Outputs"
+            name="out"
+            class="btn btn-primary"
+        />
+        </p>
+    </form>
+</div>
+</div>
+<script src="{{url_for('static', filename='utils/bootstrap.min.js')}}"></script>
+</body>
+</html>

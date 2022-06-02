@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .btn-group button {
+        background-color: #04AA6D; /* Green background */
+        border: 1px solid green; /* Green border */
+        color: white; /* White text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+        border: 2px solid black;
+        border-radius: 25px;
+      }
+      
+      .btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+      }
+      
+      /* Clear floats (clearfix hack) */
+      .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      /* Add a background color on hover */
+      .btn-group button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+</head>
+<body>
+<div style = "display:flex; align-items:center; justify-content:center">
+  <h1>
+  Welcome to crack detector!!
+  </h1>
+</div>
+<div style = "display:flex; justify-content: center">
+  <div class="btn-group">
+      <a href='/upload_imgs'><button>Upload Images</button></a>
+      <a href='/capture'><button>Capture Images</button></a>
+  </div>
+</div>
+</body

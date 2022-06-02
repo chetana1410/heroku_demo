@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='utils/bootstrap.min.css')}}" />
+    </head>
+    <body>
+        {% for i in range(len) %}
+            <div class="card my-5 mx-auto" style="width: 35vw">
+                <div class="card-body row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/' + images[i]) }}" class="card-img-top" />
+                            <div class="card-body">
+                                <center><h5>Input Image</h4></center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='results/' + results[i]) }}" class="card-img-top" />
+                            <div class="card-body">
+                                <center><h5>Output Image</h4></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <b><center>{{props[i]}}</center></b>
+                </div>
+            </div>
+        {% endfor %}
+        <script src="{{url_for('static', filename='utils/bootstrap.min.js')}}"></script>
+    </body>
+</html>
